@@ -22,19 +22,25 @@ public class Romain {
 	}
 	
 	public void recevoirCoup(int forceCoup) {
+		assert (force>0);
+		int forceDebut = force;
 		force -= forceCoup;
 		if (force > 0) {
 			parler("Aïe");
 		} else {
 			parler("J'abandonne...");
 		}
+		assert (forceDebut > force);
+	}
+	
+	private boolean forcePositive() {
+		return (force > 0);
 	}
 	
 	public static void main(String[] args) {
 		Romain cesar;
-		cesar = new Romain("César", 5);
-		System.out.println(cesar);
-		System.out.println(cesar.prendreParole());
+		cesar = new Romain("César", 6);
+		assert cesar.forcePositive();
 		cesar.parler("Bonjour, tu vas me frapper.");
 		cesar.recevoirCoup(8);
 	}
