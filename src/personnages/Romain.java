@@ -31,9 +31,7 @@ public class Romain {
 	}
 	
 	public static void main(String[] args) {
-		Gaulois asterix;
 		Romain cesar;
-		asterix = new Gaulois("Astérix", 8);
 		cesar = new Romain("César", 5);
 		System.out.println(cesar);
 		System.out.println(cesar.prendreParole());
